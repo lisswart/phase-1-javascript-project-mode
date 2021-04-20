@@ -1,0 +1,177 @@
+word-object properties that I'm interested in are:
+# def:
+    ## sseq (sense sequences)
+# dros (defined run-ons), consists of an array of drps (defined run-on phrases):
+    ## drp
+
+dros: [
+        {
+            drp: "cast about/around for", 
+            def: [
+                    {
+                        sseq: 
+                            [
+                                "sense",
+                                {dt: 
+                                    [
+                                        {t: "They {it}cast about for{/it} new ways to make money on the farm."},
+                                        {t: "She is still {it}casting aroung for{/it} [={it}seeking{/it} someone to watch her son while she is at work."}
+                                    ]
+                                }
+                            ]
+                    }
+                ]
+        },
+        {drp: ""}, 
+        {drp: ""},
+        {drp: ""}
+]
+
+# hwi
+    ## hwi.hw
+# meta
+    ## meta.id
+# shortdef (an array of string(s))
+
+
+=======================================================================================================
+Each response object consists of an array of objects.
+Each object  has the following keys that I'm interested in:
+{
+    def: [
+              {sseq: [ 
+                        "sense", 
+                        [
+                            {sn: "1"},
+                            {dt: [
+                                    [
+                                        "text", 
+                                        "{bc}a set of questions or problems that are designed to measure a person's knowledge, skills, or abilities"
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {t: "She is studying for her math {it}test{/it"}."},
+                                            {t: "I passed my biology {it}test{/it}."},
+                                            {t: "The teacher sat at his desk grading {it}tests{/it}."},
+                                            {t: "a driving {it}test{/it} [=a test that is used to see if someone is able to safely drive a car]"},
+                                            {t: "an IQ {it}test{/it}"},
+                                            {t: "{it}test{/it} questions"},
+                                            {t: "The {it}test{/it} will be on [=the questions on the test will be about] the first three chapters of the book."},
+                                            {t: "We {phrase}had a test{/phrase} on European capitals. = ({it}Brit{/it} We {phrase}did a test{/phrase} on European capitals."},
+                                            {t: "The college relies on {phrase}test scores{/phrase} in its admission process."}
+                                        ]
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}see also {dxt|||} {dxt|||} {dxt|||}{/dx} 
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        "sense", 
+                        [
+                            {sn: "2a"},
+                            {dt: [
+                                    [
+                                        "text",
+                                        "{bc}a careful study of a part of the body or of a substance taken from the body"
+                                    ],
+                                    [
+                                        "vis",
+                                        [
+                                            {t: "The {it}test{/it} showed a problem with your liver function."},
+                                            {t: "a vision {it}test{/it} [=a test that shows how well you see]"},
+                                            {t: "a urine {it}test{/it} [=a test that examines a person's urine for evidence of disease or illegal drugs]"},
+                                            {t: "allergy {it}tests{/it} [=tests that show what you are allergic to]"},
+                                            {t: "All applicants must pass a {phrase}drug test{/phrase}. [=a test that examines a person's blood or urine for evidence of illegal drugs]"},
+                                            {t: "The doctor will call you with the {phrase}test results{/phrase}."},
+                                            {t: "They went to the drug store to buy a {phrase}pregnancy test{/phrase}. [=a device that reacts to a woman's urine in a way that shows whether or not she is pregnant]"},
+                                            {t: "a {phrase}DNA test{/phrase} [=a test that examines DNA and that is used to identify someone or to show that people are relatives]"}
+                                        ]
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}see also {dxt|blood test||} {dxt|breath test||} {dxt|stress test||}{/dx}"
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        "sense", 
+                        [
+                            {sn: "b"},
+                            {dt: [
+                                    [
+                                        "text",
+                                        "{bc}"
+                                    ],
+                                    [
+                                        "vis",
+                                        {t: ""},
+                                        {t: ""}
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}{dxt|||} {dxt|||} {dxt|||}{/dx}
+                                    ]
+
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        "sense",
+                        [
+                            {sn: "3"},
+                            {dt: [
+                                    [
+                                        "text",
+                                        "{bc}"
+                                    ],
+                                    [
+                                        "vis",
+                                        {t: ""},
+                                        {t: ""}
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}{dxt|||} {dxt|||} {dxt|||}{/dx}
+                                    ]
+                                ]
+                            }
+                        ]
+                    ],
+                    [
+                        "sense",
+                        [
+                            {sn: "3"},
+                            {dt: [
+                                    [
+                                        "text",
+                                        "{bc}"
+                                    ],
+                                    [
+                                        "vis",
+                                        {t: ""},
+                                        {t: ""}
+                                    ],
+                                    [
+                                        "text",
+                                        "{dx}{dxt|||} {dxt|||} {dxt|||}{/dx}
+                                    ]
+                                ]
+                            }
+                        ]
+                    ]
+                ]
+            }
+    ],
+
+    dros: [
+        {}, {}, {}
+    ]
+}
