@@ -129,6 +129,7 @@ function displayDRP(arrOfRespObjs) {
         console.log("hw:" + headwordConsole);
         const unorderedList = document.createElement("ul");
         unorderedList.appendChild(headword);
+        
 
         if(respObj.dros) {
             const drosConsole = respObj.dros;
@@ -136,20 +137,16 @@ function displayDRP(arrOfRespObjs) {
             drpDiv.appendChild(functionalLabel);
             drpDiv.appendChild(unorderedList);
             resultPanel.appendChild(drpDiv);
-/*************************************************************************************************************************************************************/           
-            // const dros = document.createElement("li");
-            // dros.className = "drp";
-            // dros.textContent = respObj.dros.drp;
-            // drpDiv.appendChild(dros);// this is a ::marker element, resulting in empty dom element            
-/*************************************************************************************************************************************************************/
+
             drosConsole.forEach(drp => {
                 console.log("phrase: " + drp.drp);
+                
                 const drPhrase = document.createElement("li");
                 drPhrase.className = "drp";
-                drPhrase.textContent = `phrase: ${drp.drp}`;
+                drPhrase.innerHTML = `<span class="phrase">phrase: </span>${drp.drp}`;
                 drpDiv.appendChild(drPhrase);
                 resultPanel.appendChild(drpDiv);
-/**************************************************************************************************************************************************************/                
+
                 console.log("def: " + drp.def);
                 // above logs "def: [object Object]"
                 const drpDef = Array.from(drp.def);//an array with an object in it---{sseq: Array(1)}
@@ -160,6 +157,8 @@ function displayDRP(arrOfRespObjs) {
                 drpDef.forEach(sseq => {
                     const drpDefDiv = document.createElement("div");
                     drpDefDiv.className = "drp-def-div";
+                    const visUL = document. createElement("ul");
+                    visUL.className = "vis-ul";
 
                     console.log("sseq: " + sseq.sseq); //an array of object whose key is sseq
                     // logs: "sseq: sense, [object Object]"
@@ -173,7 +172,7 @@ function displayDRP(arrOfRespObjs) {
                             //the above logs to the console:
                             //"is this dt? sense, [object Object]
                             
-                            if(typeof(dt) === "object") {
+                            if(typeof(dt) === "object") {                                
                                 dt.forEach(a => {
                                     console.log("what is this? " + typeof(a));
                                     console.log("what is that? " + a);
@@ -207,11 +206,15 @@ function displayDRP(arrOfRespObjs) {
                                                                     console.log(d.t);                                                           
                                                                     //logs: (2) [Array(2), Array(2)],                                                                   
                                                                     //      "object"
-                                                                    const dt = document.createElement("li");
-                                                                    dt.className = "vis";
-                                                                    dt.textContent = `verbal illustration: ${d.t}`;
-                                                                    drpDefDiv.appendChild(dt);
-                                                                    drpDiv.appendChild(drpDefDiv);
+                                                                    
+                                                                    const firstVis = document.createElement("li");
+                                                                    firstVis.className = "vis";
+                                                                    if(typeof(d.t) == typeof("")) {
+                                                                    firstVis.innerHTML = `<span class="vis">verbal illustration: </span>${d.t}`;
+                                                                    }                     
+                                                                    visUL.appendChild(firstVis);                                               
+                                                                    // drpDefDiv.appendChild(visUL);
+                                                                    drpDiv.appendChild(visUL);
                                                                     resultPanel.appendChild(drpDiv);
                                                                     Array.from(d).forEach(e => {
                                                                             console.log(e);
@@ -219,9 +222,12 @@ function displayDRP(arrOfRespObjs) {
                                                                             console.log(e.t);
                                                                             const et = document.createElement("li");
                                                                             et.className = "vis";
-                                                                            et.textContent = `verbal illustration: ${e.t}`;
-                                                                            drpDefDiv.appendChild(et);
-                                                                            drpDiv.appendChild(drpDefDiv);
+                                                                            if(typeof(e.t) == typeof("")) {
+                                                                                et.innerHTML = `<span class="vis">verbal illustration: </span>${e.t}`;
+                                                                                }
+                                                                            visUL.appendChild(firstVis);                                               
+                                                                            // drpDefDiv.appendChild(visUL);
+                                                                            drpDiv.appendChild(visUL);
                                                                             resultPanel.appendChild(drpDiv);
                                                                             if(typeof(e) === "object") {
                                                                                 Array.from(e).forEach(f => {
@@ -230,10 +236,12 @@ function displayDRP(arrOfRespObjs) {
                                                                                     console.log(f.t);
                                                                                     const ft = document.createElement("li");
                                                                                     ft.className = "vis";
-                                                                                    if(typeof(f.t) !== "") {
-                                                                                    ft.textContent = `verbal illustration: ${f.t}`;
-                                                                                    drpDefDiv.appendChild(ft);
-                                                                                    drpDiv.appendChild(drpDefDiv);
+                                                                                    if(typeof(f.t) == typeof("")) {
+                                                                                        ft.innerHTML = `<span class="vis>verbal illustration: </span>${f.t}`;
+                                                                                        }
+                                                                                    visUL.appendChild(firstVis);                                               
+                                                                                   // drpDefDiv.appendChild(visUL);
+                                                                                    drpDiv.appendChild(visUL);
                                                                                     resultPanel.appendChild(drpDiv);
                                                                             //logs: (2) ["text", "used to say that you would not be surprised if someone did something bad"],
                                                                             //      "object",
@@ -261,10 +269,12 @@ function displayDRP(arrOfRespObjs) {
                                                                                                 //      "I don't know if she ever cheated on an exam, but {it}I wouldn't put it past her{/it}."
                                                                                                 const gt = document.createElement("li");
                                                                                                 gt.className = "vis";
-                                                                                                gt.textContent = `verbal illustration: ${g.t}`;
-                                                                                                
-                                                                                                    drpDefDiv.appendChild(gt);
-                                                                                                    drpDiv.appendChild(drpDefDiv);
+                                                                                                if(typeof(g.t) == typeof("")) {
+                                                                                                    gt.innerHTML = `<span class="vis">verbal illustration: </span>${g.t}`;
+                                                                                                    }
+                                                                                                    visUL.appendChild(firstVis);                                               
+                                                                                                    // drpDefDiv.appendChild(visUL);
+                                                                                                    drpDiv.appendChild(visUL);
                                                                                                     resultPanel.appendChild(drpDiv);
                                                                                             
                                                                                             if(typeof(g) === "object") {
@@ -274,10 +284,12 @@ function displayDRP(arrOfRespObjs) {
                                                                                                     console.log(h.t);
                                                                                                     const ht = document.createElement("li");
                                                                                                     ht.className = "vis";
-                                                                                                    if(typeof(h.t) === "object") {
-                                                                                                        ht.textContent = `verbal illustration: ${h.t}`;
-                                                                                                        drpDefDiv.appendChild(ht);
-                                                                                                        drpDiv.appendChild(drpDefDiv);
+                                                                                                    if(typeof(h.t) == typeof("")) {
+                                                                                                        ht.innerHTML = `<span class="vis">verbal illustration: </span>${h.t}`;
+                                                                                                        }
+                                                                                                        visUL.appendChild(firstVis);                                               
+                                                                                                        // drpDefDiv.appendChild(visUL);
+                                                                                                        drpDiv.appendChild(visUL);
                                                                                                         resultPanel.appendChild(drpDiv);
                                                                                                         if(typeof(h) === "object") {
                                                                                                             Array.from(h).forEach(m => {
@@ -286,20 +298,21 @@ function displayDRP(arrOfRespObjs) {
                                                                                                                 console.log(m.t);
                                                                                                                 const mt = document.createElement("li");
                                                                                                                 mt.className = "vis";
-                                                                                                                if(typeof(m.t) === "object") {
-                                                                                                                    mt.textContent = `verbal illustration: ${m.t}`;
-                                                                                                                    drpDefDiv.appendChild(mt);
-                                                                                                                    drpDiv.appendChild(drpDefDiv);
-                                                                                                                    resultPanel.appendChild(drpDiv);
-                                                                                                                }
+                                                                                                                if(typeof(m.t) == typeof("")) {
+                                                                                                                    mt.innerHTML = `<span class="vis">verbal illustration: </span>${m.t}`;
+                                                                                                                    }
+                                                                                                                    visUL.appendChild(firstVis);                                               
+                                                                                                                    // drpDefDiv.appendChild(visUL);
+                                                                                                                    drpDiv.appendChild(visUL);
+                                                                                                                    resultPanel.appendChild(drpDiv);                                                                                                                
                                                                                                             })                                                                                                        
                                                                                                         }
-                                                                                                    }
+                                                                                                    
                                                                                                 })
                                                                                             }
                                                                                         })
                                                                                     }
-                                                                                }                                                                                                                                                            
+                                                                                                                                                                                                                                            
                                                                             })
                                                                         }
                                                                     }) 

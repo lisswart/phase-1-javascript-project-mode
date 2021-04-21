@@ -184,21 +184,43 @@ li.short-def::marker {
 
 li.drp::marker {
     color: red;
+    list-style-position: outside;
 }
 
 li.drp {
-    margin-left: 5em;
+    margin-left: 4em;
     padding-bottom: 0;
 }
 
 li.vis {
-    margin-left: 5em;
-    padding-left: 2em;
+    margin-left: 3em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0.5em;
 }
 
 li.vis::marker {
     color: olivedrab;
-    list-style-type: symbols("");
-    margin-left: 5em;
     padding-bottom: 0;
+    list-style-position: outside;
+}
+
+li.vis:empty {
+    display: none;
+}
+
+span.vis {
+    color:blue;
+}
+
+span.phrase {
+    color: rgb(151, 3, 151);
+}
+
+span.short-def-span {
+    color:teal;
+}
+
+span.syn-span {
+    color:rgb(1, 143, 32);
 }
