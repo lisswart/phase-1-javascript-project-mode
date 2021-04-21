@@ -10,132 +10,40 @@ body {
 #page-container {
     position: relative;
     min-height: 100vh;
+    background-color: lemonchiffon;
 }
 
 #content-wrapper {
     padding-bottom: 2.5rem;
     font-family: monospace;
+    font-size:20px;
 }
 
 #header-image {
-    background-color: rgb(250, 7, 7);
-    min-height: 500px;
-    object-fit: cover;
+    background-color: rgb(255, 7, 7);
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-h1 {
-    background-color: aliceblue;
-    color: rgb(71, 63, 53);
     min-height: 400px;
-    min-width: 400px;
-    border-radius: 50%;
+}
+
+#header-title-div {
+    background-color: #fff;
+    min-height: 200px;
+    min-width: 200px;
+    padding: 3em;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center;
-}
-
-h3 {
-    color: black;
-}
-
-#search-div {
-    background-color: transparent;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-#search-type {
-    font-size: 20px;
-    outline: none;
-    border: 1px solid #0105f5;
-    background-color: #0105f5;
-    color: cornsilk;
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-#search-type:focus {
-    background-color: #0477faf8;
-    color:cornsilk;
-}
-
-#search-box {
-    width: 50%;
-    min-height: 45px;
-    padding: 5px;
-    outline: none;
-    color: #5a5e5c;
-    font-size: 20px;
-    text-align: center;
-}
-
-#search-button {
-    min-width: 100px;
-    height: inherit;
-    border: 1px solid #0105f5;
-    background-color: #0105f5;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    outline: none;
-}
-
-.short-definition-div {
-    background-color: antiquewhite;
-    border-left: 1pc solid rgba(28, 170, 206, 0.87);
-
-    margin-bottom: 1pc;
-    margin-left: 5em;
-    margin-right: 5em;
-    padding-bottom: 1em;
-}
-
-.short-definition-div:last-of-type {
-    margin-bottom: 2.5rem;
-}
-
-h2 {
-    text-align: center;
-    color: crimson;
-}
-
-.hwi {
-    color:cornflowerblue;
-}
-
-ul {
-    margin-left: 5em;
-    padding-right: 5em;
-}
-
-.fl {
-    list-style: none;
-    color:brown;
-    text-align: center;
-}
-
-li {
-    padding-top: 1em;
-    font-size: 20px;
-}
-
-li:last-of-type {
-    padding-bottom: 1em;
+    flex-wrap: wrap;
+    border-radius: 50%;
 }
 
 footer {
     position: absolute;
     width: 100%;
     height: 2.5rem;
-    background-color: rgb(250, 7, 7);
+    background-color: rgb(255, 7, 7);
     color: cornsilk;
     bottom: 0;
     display: flex;
@@ -143,84 +51,157 @@ footer {
     align-items: center;
 }
 
-.drp-div, .thesaurus-div{
+main {
+    background-color: lemonchiffon;
+    font-size: 20 px;
+}
+
+form.form-function {
+    background-color: rgb(18, 1, 250);
+    padding: 0.2em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#search-option {
+    font-size: 20px;
+    font-family: monospace;
+    outline: none;
+    background-color: rgb(4, 41, 253);
+    border: 1px solid rgb(17, 52, 255);
+    color: cornsilk;
+    padding: 7px;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#search-option:focus {
+    background-color: rgb(67, 141, 211);
+    color:cornsilk;
+}
+
+#search-bar {
+    font-size: 20px;
+    font-family: monospace;
+    width: 75%;
+    padding: 7px;
+    outline: none;
     background-color: antiquewhite;
-    border-left: 1pc solid rgba(12, 99, 121, 0.87);
-    margin-bottom: 1pc;
-    margin-left: 5em;
-    margin-right: 5em;
-    padding-bottom: 1em;
+    border: 1.5px solid antiquewhite;
+    color: black;
+    text-align: left;
 }
 
-div.drp-div  h3.hwi {
-    color:cornflowerblue;
+#search-button {
+    font-size: 20px;
+    font-family: monospace;
+    height: inherit;
+    padding: 7px;
+    background-color: rgb(26, 1, 252);
+    color: cornsilk;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgb(1, 5, 252);
 }
 
-.drp-div:last-of-type {
+#results-panel {
+    background-color: rgb(184, 241, 245);
     margin-bottom: 2.5rem;
 }
 
-li.bloom {
-    margin-left: 6.5em;
+div.top-level-objects {
+    background-color: lemonchiffon;;
+    border-left: 1pc solid lemonchiffon;
+    margin-top: 1em;
 }
 
-div.thesaurus-div{
-    background-color: antiquewhite;
-    border-left: 1pc solid rgba(12, 99, 121, 0.87);
-    margin-bottom: 1pc;
-    margin-left: 5em;
-    margin-right: 5em;
-    padding-bottom: 1em;
+/* div.top-level-objects:last-of-type {
+
+} */
+
+div.sseq {
+    background-color: lemonchiffon;
+    margin-left: 1em;
+    margin-top: 1em;
 }
 
-li.short-def, li.synonyms {
-    color:rgb(4, 57, 70);
-    margin-left: 1.75em;
+/* div.sseq:last-of-type {
+
+} */
+
+div.sense {
+    background-color: lightgoldenrodyellow;
+    /* margin-left: 1em; */
+    margin-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    border-left: 1pc solid violet;
+    font-size: 20px;
 }
 
-li.short-def::marker {
-    color: red;
+/* div.sense:last-of-type {
+    
+} */
+
+h3.headword {
+    text-align: center;
+    color: navy;
 }
 
-li.drp::marker {
-    color: red;
+h3.functional-label {
+    color:orangered;
+    font-size: 20px;
+}
+
+ul.definition {
+    background-color: lemonchiffon;;
+}
+
+li.text {
+    margin-bottom: 0.5em;
+}
+
+li.text::marker {
     list-style-position: outside;
+    color:teal;
 }
 
-li.drp {
-    margin-left: 4em;
-    padding-bottom: 0;
-}
-
-li.vis {
-    margin-left: 3em;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0.5em;
-}
-
-li.vis::marker {
-    color: olivedrab;
-    padding-bottom: 0;
-    list-style-position: outside;
+ul.verbal-illustrations {
+    background-color: lemonchiffon;
+    padding-left: 1em;
 }
 
 li.vis:empty {
     display: none;
 }
 
+li.vis {
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 15px;
+    padding-left: 1em;
+    margin-left: 3em;
+    padding: 0.5em;
+}
+
+li.vis::marker {
+    list-style-position: outside;
+    color:rgb(241, 92, 66);
+}
+
+li.vis:last-of-type {
+   padding-bottom: 0;
+}
+
+span.text {
+    color: blue;
+}
+
 span.vis {
-    color:blue;
+    color: blue;
 }
 
 span.phrase {
-    color: rgb(151, 3, 151);
-}
-
-span.short-def-span {
-    color:teal;
-}
-
-span.syn-span {
-    color:rgb(1, 143, 32);
+    color: red;
 }
